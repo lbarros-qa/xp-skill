@@ -1,18 +1,21 @@
 ---
-name: story
-description: Take one user story from a backlog, add 2-3 Given/When/Then acceptance criteria, propose at least 5-bullet minimal plan with tasks. Saves the approved definition to ref/PLAN.md. Does not write code. Use when you need to refine a single story for implementation.
+name: xp-story
+description: Take one user story from a backlog, add 2-3 Given/When/Then acceptance criteria, and propose a minimal plan of at most five steps with verification tasks. Saves the approved definition to ref/PLAN.md. Does not write code. Use when you need to refine a single story for implementation.
 license: GPL-3.0
+metadata:
+  author: Leandro Barros
+  version: "0.2.0"
 ---
 
 # Story
 
 ## Goal
 
-Refine a single user story into acceptance criteria and an actionable minimal plan. It never writes code; implementation is handled by /pair.
+Refine a single user story into acceptance criteria and an actionable minimal plan. It never writes code; implementation is handled by /xp-pair.
 
 ## When to use
 
-- After /backlog has produced a vertical user story.
+- After /xp-backlog has produced a vertical user story.
 - When the user wants to define what "done" means for a story.
 - When the user wants a minimal, verifiable plan before coding.
 
@@ -65,10 +68,10 @@ After you add these to the tracker, we can refine one at a time.
 
 ## Rules
 
-- **Don't invent requirements.** If information is missing, ask. Do not fill gaps.
-- **The simplest thing that meets the criteria.** No abstractions, layers, configuration, or patterns for the future.
-- **Suggest, don't decide.** If a pattern could help, mention it under "Suggestions" only if there is a concrete signal in the code.
-- **Do not write code.**
+- **The skill MUST NOT invent requirements.** If information is missing, ask; do not fill gaps.
+- **The simplest thing that meets the criteria.** The plan SHOULD NOT introduce abstractions, layers, configuration, or patterns for the future.
+- **Suggest, don't decide.** The skill SHOULD mention a pattern under "Suggestions" only when there is a concrete signal in the code.
+- **The skill MUST NOT write code.**
 - **Use RFC 2119 keywords (MUST, MUST NOT, SHOULD, SHOULD NOT, MAY) for all normative statements.**
 - The skill **MUST** ask one question at a time when clarification is needed.
 - The skill **MUST NOT** create files without user approval.

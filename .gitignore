@@ -146,4 +146,5 @@ vite.config.ts.timestamp-*
 .freebuff/
 .command-code/
 
-
+# general - workspace and temporary files
+xp-backlog-workspace/

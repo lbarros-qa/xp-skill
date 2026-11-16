@@ -1,0 +1,8 @@
+schema_version: "1.1"
+name: test-list-before-code
+expected_outcome: |
+  The response reads AGENTS.md and ref/PLAN.md, then proposes a short test list
+  derived from the acceptance criteria, with a testing level for each item
+  (unit, component, integration, manual). Criteria that cannot be tested
+  automatically are marked for manual verification. The response waits for user
+  approval of the test list and writes no test or source files.

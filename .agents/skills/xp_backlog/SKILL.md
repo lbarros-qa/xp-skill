@@ -1,14 +1,17 @@
 ---
-name: backlog
+name: xp-backlog
 description: Split a software idea or feature into a set of vertical user stories. Asks clarifying questions, surfaces expensive-to-change decisions, and saves the agreed backlog to ref/BACKLOG.md and project context to AGENTS.md after approval.
 license: GPL-3.0
+metadata:
+  author: Leandro Barros
+  version: "0.2.0"
 ---
 
 # Backlog
 
 ## Goal
 
-Turn a vague idea or discussed feature into a vertical list of user stories. It follows the planning game: clarify, propose, agree, and persist the results. It deliberately leaves implementation to the story and pair skills.
+Turn a vague idea or discussed feature into a vertical list of user stories. It follows the planning game: clarify, propose, agree, and persist the results. It deliberately leaves implementation to the xp-story and xp-pair skills.
 
 ## When to use
 
@@ -34,14 +37,15 @@ Turn a vague idea or discussed feature into a vertical list of user stories. It 
 ### Example: clarifying an unclear request
 
 User: I want a way for users to pay for the app.
-Agent: To write good stories, I need a bit more context.
+Agent: To write good stories, I need a bit more context. One question first:
 
 - **Question:** Is the payment meant for a one-time purchase, a subscription, or both?
-  (Suggestion: user says "subscription" or "recurrent")
+  (Suggestion: "subscription" or "recurrent")
+
+The user answers "subscription", and the next question follows, one at a time:
+
 - **Question:** Should the payment support multiple providers (for example: debit card, credit card, stripe, mercadopago, and PayPal) or just one?
-  (Suggestion: "both, but credit card first")
-- **Question:** Who is the actor making the payment?
-  (Suggestion: "the buyer")
+  (Suggestion: "credit card first")
 
 After these questions, you can propose stories such as:
 
@@ -49,21 +53,14 @@ After these questions, you can propose stories such as:
 2. As a buyer, I want to pay with a credit card, so that I can start using the service.
 3. As a buyer, I want to upgrade or downgrade my plan, so that I can match my usage.
 
-
-Backlog:
-
-1. As a user, I want to switch between light and dark themes, so that I can use the dashboard comfortably in low-light environments.
-2. As a user, I want the selected theme to persist across sessions, so that I do not have to change it every time I open the app.
-3. As a user, I want a visual indicator in the settings, so that I can see which theme is active.
-
 ## Rules
 
-- **Don't invent requirements.** If something is missing, ask. Do not fill gaps with your own assumptions.
-- **Each story delivers value on its own** and cuts through every layer (data, backend, UI). Never split by layer.
-- **No technical stories.** For example, "set up the database" or "create the user model" is not a story. Infrastructure belongs inside the first story that needs it.
-- **Few stories.** Ten to fifteen at most. You can always add more later.
-- **One line per story.** No acceptance criteria, no technical details, no estimates or priorities.
-- **The first story is the smallest one usable end to end.** It defines the walking skeleton.
+- **The skill MUST NOT invent requirements.** If something is missing, ask; do not fill gaps with your own assumptions.
+- **Vertical stories.** Each story MUST deliver value on its own and cut through every layer (data, backend, UI). The skill MUST NOT split work by layer.
+- **No technical stories.** The skill MUST NOT create infrastructure stories (for example, "set up the database" or "create the user model"). Infrastructure belongs inside the first story that needs it.
+- **Few stories.** The list SHOULD contain at most ten to fifteen stories; fewer is fine. You can always add more later.
+- **One line per story.** Stories MUST NOT include acceptance criteria, technical details, estimates, or priorities.
+- **Walking skeleton.** The first story MUST be the smallest one usable end to end.
 - **Use RFC 2119 keywords (MUST, MUST NOT, SHOULD, SHOULD NOT, MAY) for all normative statements.**
 - The skill **MUST** ask one question at a time when requirements are unclear.
 - The skill **MUST NOT** create stories, files, or acceptance criteria without user approval.

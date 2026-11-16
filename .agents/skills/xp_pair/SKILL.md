@@ -1,7 +1,10 @@
 ---
-name: pair
+name: xp-pair
 description: AI-driven pair programming for one refined story. The AI writes code in tiny test-driven steps, waits for user approval each time, and never commits. Use when you are pairing on implementation of an approved story.
 license: GPL-3.0
+metadata:
+  author: Leandro Barros
+  version: "0.2.0"
 ---
 
 # Pair
@@ -12,13 +15,13 @@ Guide the user through implementation of a single story using strict test-driven
 
 ## When to use
 
-- After /story has produced an approved story, acceptance criteria, and a plan.
+- After /xp-story has produced an approved story, acceptance criteria, and a plan.
 - When the user wants to implement a story with small, verifiable TDD cycles.
 - When the user wants a quality-assured coding session with clean code, DRY, and KISS.
 
 ## Conversation flow
 
-1. **Read the approved story and plan.** Look for the story in `ref/PLAN.md` and the associated criteria and tasks. If the file or tasks are missing, ask the user to run /story first.
+1. **Read the approved story and plan.** Look for the story in `ref/PLAN.md` and the associated criteria and tasks. Read `AGENTS.md` too for the agreed project context. If the file or tasks are missing, ask the user to run /xp-story first.
 2. **Check the plan against the current code.** Tell the user if something no longer fits. If the plan is stale, ask which part to update before proceeding.
 3. **Propose the test list.** From the acceptance criteria, propose a short list of test names and where they will be tested (endpoint, service, component, unit, manual). Mark criteria that cannot be tested automatically as manual verification. Wait for the user to approve the list.
 4. **Run one TDD cycle.** By default, run a single step:
@@ -28,6 +31,7 @@ Guide the user through implementation of a single story using strict test-driven
    - Run the tests again and show they pass (green).
 5. **Pause after the step.** Send a micro message summarizing:
    - ✅ Passes "<test name>".
+   - ⛔ Fails "<test name>".
    - <what changed> (files and lines).
    - Decided: any judgment call you made.
    - Ask: continue with "<next test>" or change anything?
@@ -43,9 +47,9 @@ Guide the user through implementation of a single story using strict test-driven
 10. **At the end of the story**, do a final review:
    - Confirm all tasks are green.
    - Run the relevant regression or smoke checks.
-   - Walk through any criteria marked manual verification together.
-   - Suggest the user run /code-review if available. If not, suggest a separate review session.
-   - Ask whether to commit. Never commit on your own.
+    - Walk through any criteria marked manual verification together.
+    - Suggest a separate review session with a fresh context; do not perform the review yourself.
+    - Ask whether to commit. Never commit on your own.
 
 ### Example: first cycle
 
@@ -77,10 +81,10 @@ Continue with "2"?
 
 ## Rules
 
-- **The AI writes code; the user decides and approves.**
-- **One story per session; one TDD cycle by default.**
-- **Strict TDD: red, green, then refactor.** Refactor only with green tests and with user approval.
-- **DRY and KISS:** avoid duplication and overly complex solutions. Apply only where there is a clear signal.
+- **The AI writes code; the user decides.** The user MUST approve each step.
+- **One story per session.** A session MUST cover a single story, with one TDD cycle by default.
+- **Strict TDD: red, green, then refactor.** The AI MUST refactor only with green tests and with user approval.
+- **DRY and KISS:** The AI SHOULD avoid duplication and overly complex solutions, applying them only where there is a clear signal.
 - **Use RFC 2119 keywords (MUST, MUST NOT, SHOULD, SHOULD NOT, MAY) for all normative statements.**
 - The AI **MUST** ask for approval before writing each test, before reading each code file, and before any refactor.
 - The AI **MUST NOT** commit changes.
@@ -107,7 +111,7 @@ When the checklist is green:
 
 - Review together any item marked for **manual verification**.
 - Suggest run linter or test-runner for an independent review (it uses a clean context. Do not perform the review yourself).
-- If patterns repeat or the code looks messy, **suggest** a refactor; the decision remains mine. Refactor only with tests green, and never mix refactoring with new functionality in the same change.
+- If patterns repeat or the code looks messy, **suggest** a refactor; the decision remains the user's. Refactor only with tests green, and never mix refactoring with new functionality in the same change.
 - If a decision we made applies project-wide, propose a line to add to `AGENTS.md`.
 
 ## Output format

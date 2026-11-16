@@ -1,0 +1,7 @@
+schema_version: "1.1"
+name: asks-questions-before-stories
+expected_outcome: |
+  The response asks clarifying questions about the vague payment request instead of
+  inventing requirements. Questions are asked one at a time, each with a suggested
+  answer. No files (ref/BACKLOG.md or AGENTS.md) are written, because the user has
+  not approved any backlog.

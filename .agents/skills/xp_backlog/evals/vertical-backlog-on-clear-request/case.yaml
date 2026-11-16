@@ -1,0 +1,8 @@
+schema_version: "1.1"
+name: vertical-backlog-on-clear-request
+expected_outcome: |
+  The response proposes a backlog of vertical, one-line user stories in the
+  Context/Backlog template format. The first story is the smallest end-to-end
+  walking skeleton. There are no technical-only stories (no "set up the database"
+  stories), at most 15 stories, no acceptance criteria or estimates, and no files
+  are written without approval.

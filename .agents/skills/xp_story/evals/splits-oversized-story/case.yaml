@@ -1,0 +1,7 @@
+schema_version: "1.1"
+name: splits-oversized-story
+expected_outcome: |
+  The response recognizes the story is too large for 2-3 criteria and proposes
+  splitting it into smaller one-line stories in backlog format (per device or
+  concern), instead of producing a bloated criteria list. It waits for the user
+  before doing anything else and writes no files.

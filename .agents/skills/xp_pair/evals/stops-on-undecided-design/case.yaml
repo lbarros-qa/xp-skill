@@ -1,0 +1,8 @@
+schema_version: "1.1"
+name: stops-on-undecided-design
+expected_outcome: |
+  The plan in ref/PLAN.md has no task covering the no-flash criterion, so
+  implementing it requires a design decision that is not in the plan. The
+  response must stop instead of deciding on its own: it does not write a test or
+  source file for the no-flash behavior, and instead explains the gap and asks
+  the user how to proceed (for example, updating the plan first).
