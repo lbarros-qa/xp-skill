@@ -1,6 +1,6 @@
 ---
 name: backlog
-description: Split a software idea or feature into a set of vertical user stories. Asks clarifying questions, surfaces expensive-to-change decisions, and saves the agreed backlog to ref/BACKLOG.md and project context to AGENT.md after approval.
+description: Split a software idea or feature into a set of vertical user stories. Asks clarifying questions, surfaces expensive-to-change decisions, and saves the agreed backlog to ref/BACKLOG.md and project context to AGENTS.md after approval.
 license: GPL-3.0
 ---
 
@@ -28,7 +28,7 @@ Turn a vague idea or discussed feature into a vertical list of user stories. It 
 4. **Propose a backlog.** Follow the rules below to generate a small list of vertical stories. The first story is the smallest end-to-end piece (walking skeleton). Keep the list to 10-15 stories; fewer is fine.
 5. **After approval**, persist the agreed context and stories. The skill writes:
    - `ref/BACKLOG.md` with the context, stack, expensive decisions, and the full story list.
-   - `AGENT.md` with the agreed project purpose, users, stack, constraints, expensive decisions, and workflow locations.
+   - `AGENTS.md` with the agreed project purpose, users, stack, constraints, expensive decisions, and workflow locations.
 6. **Offer to refine a story next.** Do not automatically invoke another skill.
 
 ### Example: clarifying an unclear request
@@ -113,7 +113,7 @@ Expensive decisions: <the ones that apply, or "none">
 3. As a <actor>, I want <action>, allowing me to <benefit>.
 ```
 
-### AGENT.md
+### AGENTS.md
 
 Write or update the project context:
 
@@ -125,5 +125,5 @@ Write or update the project context:
 - Stack: <agreed technologies>
 - Constraints: <any important constraints>
 - Expensive decisions: <list or none>
-- Workflow files: ref/BACKLOG.md, ref/PLAN.md, AGENT.md
+- Workflow files: ref/BACKLOG.md, ref/PLAN.md, AGENTS.md
 ```

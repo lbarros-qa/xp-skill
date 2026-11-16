@@ -8,7 +8,7 @@ See `proposal.md` - Why. The repository already contains `.agents/skills/` with 
 
 **Goals:**
 - Provide three agent skills that together form a comfortable, step‑by‑step XP workflow for a small AI‑assisted project team.
-- `backlog` **clarifies** the problem before any work, asks one question at a time with a suggested answer, and, after approval, writes the agreed vertical user stories to `ref/BACKLOG.md` and the agreed project context to `AGENT.md`.
+- `backlog` **clarifies** the problem before any work, asks one question at a time with a suggested answer, and, after approval, writes the agreed vertical user stories to `ref/BACKLOG.md` and the agreed project context to `AGENTS.md`.
 - `story` refines a single story into 2‑3 outcome‑based Given/When/Then acceptance criteria and a **minimal** ≤5‑step plan with verifiable tasks; after approval it writes the story, criteria, plan and tasks to `ref/PLAN.md`.
 - `pair` acts as the driver: it reads the approved plan, proposes a test list for approval, then implements the tasks with strict TDD (red → green → refactor), applying KISS, DRY and clean‑code rules, stopping after one step unless the user asks for a batch, and never committing on its own.
 - All three skills ask clarifying questions before inventing requirements, keep explanations separate from normative rules, and use professional English with RFC 2119 keywords for normative statements.
@@ -24,9 +24,9 @@ See `proposal.md` - Why. The repository already contains `.agents/skills/` with 
 - **Frontmatter:** only the standard Agent Skills fields (`name`, `description`, `license`, `metadata`). Metadata contains `author: Leandro Barros` and `version: "0.1.0"`. No `compatibility`, `allowed-tools`, or other client extensions.
 - **License:** `GPL-3.0`, matching the repository `LICENSE`.
 - **Language & tone:** professional English; RFC 2119 keywords are used for every normative statement.
-- **Evolution & discovery:** the skills explicitly read the singular `AGENT.md` (and any `ref/BACKLOG.md` or `ref/PLAN.md`) rather than relying on client‑side auto‑discovery. If a file does not exist, the skill creates it; if the file exists, the skill preserves unrelated content and appends or updates only the sections it owns.
+- **Evolution & discovery:** the skills explicitly read the singular `AGENTS.md` (and any `ref/BACKLOG.md` or `ref/PLAN.md`) rather than relying on client‑side auto‑discovery. If a file does not exist, the skill creates it; if the file exists, the skill preserves unrelated content and appends or updates only the sections it owns.
 - **Persistence contract:**
-  - `/backlog` → `ref/BACKLOG.md` (context, stack, expensive decisions, story list), `AGENT.md` (purpose, users, stack, constraints, decisions, workflow locations).
+  - `/backlog` → `ref/BACKLOG.md` (context, stack, expensive decisions, story list), `AGENTS.md` (purpose, users, stack, constraints, decisions, workflow locations).
   - `/story` → `ref/PLAN.md` (selected story, acceptance criteria, minimal plan, out‑of‑scope, suggestions, approved test list, QA status).
   - `/pair` → updates `ref/PLAN.md` QA status and task verification evidence; never writes to the backlog or plan files except status updates.
 - **User‑control flow:**
@@ -41,7 +41,7 @@ See `proposal.md` - Why. The repository already contains `.agents/skills/` with 
 ## Risks / Trade‑offs
 
 - [Risk] Over‑asking may slow the conversation → Mitigation: ask only one question at a time, with a suggested answer, and only when something is truly unclear.
-- [Risk] Persisting files may conflict with client project conventions → Mitigation: skills always read existing `AGENT.md` (and `ref/*`) first, preserve unrelated content, and ask before overwriting.
+- [Risk] Persisting files may conflict with client project conventions → Mitigation: skills always read existing `AGENTS.md` (and `ref/*`) first, preserve unrelated content, and ask before overwriting.
 - [Risk] Manual verification may be forgotten → Mitigation: the test list explicitly marks manual items, and the QA status section in `ref/PLAN.md` reminds the user to verify them.
 - [Risk] The user may miss the explicit `do N` meaning → Mitigation: the skill repeats the meaning of `do N` (run N full cycles, one after another) before executing.
 - [Risk] Skills‑ref is not installed → Mitigation: manual frontmatter, naming and length checks are performed; skills are kept to < 500 lines and use standard frontmatter only.

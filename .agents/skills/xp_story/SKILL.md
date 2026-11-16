@@ -19,7 +19,7 @@ Refine a single user story into acceptance criteria and an actionable minimal pl
 ## Conversation flow
 
 1. **Read the story.** If the story is missing or ambiguous, ask one clarifying question at a time with a suggested answer. Do not invent details.
-2. **Read the project context.** Look for existing agreed files: AGENT.md and ref/BACKLOG.md. Use them to keep the story consistent with the agreed purpose and stack.
+2. **Read the project context.** Look for existing agreed files: AGENTS.md and ref/BACKLOG.md. Use them to keep the story consistent with the agreed purpose and stack.
 3. **Propose acceptance criteria.** Provide 2-3 Given/When/Then statements. They describe what the user sees or gets, not how it is implemented.
 4. **If more than three criteria are needed, do not bloat.** Propose splitting the story into shorter stories in backlog format and wait for the user to add them.
 5. **Propose a minimal plan.** A maximum of five short steps. Each step MUST be a checkbox with a verification condition (e.g., - [ ] `npm test` passes). Do not mention implementation details or file names.
@@ -32,7 +32,7 @@ Refine a single user story into acceptance criteria and an actionable minimal pl
 User: Add a dark mode toggle.
 Agent: I'll first check the existing context.
 
-- Read AGENT.md, ref/BACKLOG.md, and the current code.
+- Read AGENTS.md, ref/BACKLOG.md, and the current code.
 
 [Assume the user wants to add a dark mode toggle to the dashboard.]
 
